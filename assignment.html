@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+        <link rel="javascript" href="script.js">
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            padding: 5px;
+        }
+
+        .search-bar {
+            margin-top: 60px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 200px;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+        }
+
+        .search-bar button:hover {
+            background-color: #555;
+        }
+
+        .weather-details {
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#search">Search</a>
+        <a href="#weather">Weather</a>
+        <a href="#footer">Footer</a>
+    </nav>
+
+    <div class="search-bar" id="search">
+        <input type="text" id="city-input" placeholder="Enter city name">
+        <button onclick="searchCity()">Search</button>
+    </div>
+
+    <div class="weather-details" id="weather">
+        <h2>Weather Details</h2>
+        <p id="city-name">City: </p>
+        <p id="temperature">Temperature: </p>
+        <p id="description">Description: </p>
+        <p id="humidity">Humidity: </p>
+        <p id="wind-speed">Wind Speed: </p>
+    </div>
+
+    <footer id="footer">
+        <p>Weather Dashboard &copy; 2025</p>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+    </footer>
+
+    <script>
+        function searchCity() {
+            var city = document.getElementById('city-input').value;
+
+            if (city === "") {
+                alert("Please enter a city name.");
+            } else {
+                document.getElementById('city-name').innerText = "City: " + city;
+                document.getElementById('temperature').innerText = "Temperature: 25°C";
+                document.getElementById('description').innerText = "Description: Clear Sky";
+                document.getElementById('humidity').innerText = "Humidity: 50%";
+                document.getElementById('wind-speed').innerText = "Wind Speed: 10 km/h";
+            }
+        }
+    </script>
+</body>
+</html>
